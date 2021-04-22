@@ -2,7 +2,7 @@
 
 This project is based on codes from [BorealisAI](https://github.com/BorealisAI/private-data-generation "private-data-generation") with major updates in model, dataset, loss function and additional visualization feature.
 
-Our codes are divided in serveral sections, please check the following instructions on how to recreate our results.
+Our codes are divided in several sections, please check the following instructions on how to recreate our results.
 
 
 
