@@ -1,4 +1,4 @@
-# Exploring  Better Trade-off in Private Data Generation \\ between Differential Privacy Guarantee and Generation Utility
+# Exploring  Better Trade-off in Private Data Generation between Differential Privacy Guarantee and Generation Utility
 
 This project is based on codes from [BorealisAI](https://github.com/BorealisAI/private-data-generation "private-data-generation") with major updates in model, dataset, loss function and additional visualization feature.
 
