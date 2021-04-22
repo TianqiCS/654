@@ -21,7 +21,9 @@ Our codes are divided in several sections, please check the following instructio
 ## How to:
 
 **PATE-GAN on Credit card dataset** : Go to the subfolder "PATE-GAN-For-Credit-dataset" and run the note book.
-Notice, you need to change the directory in the first part of notebook with your own settings
+Notice, you need to change the "read file directory" from the first part of notebook with your own settings.
+
+For example: 
 
 
 
