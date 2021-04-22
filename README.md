@@ -20,6 +20,7 @@ Our codes are divided in several sections, please check the following instructio
 
 ## How to:
 
+**PATE-GAN on Credit card dataset** : Go to the subfolder
 
 
 
