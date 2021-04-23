@@ -15,6 +15,8 @@ This dataset presents transactions that occurred in two days, where we have 492 
 
 ### MNIST dataset
 
+We leverage the MNIST dataset directly from Pytorch, i.e., torchvision.dataset. For the binary classificaiton task, we select images in class 0 and 1 and the number of each class is balanced. The dimension of each images is 28*28 and we transform them into N*784 tabular form into  .csv files, but transform them back to 28*28 while the training of CNN-based GANs. The resulting dataset contains 12,665 training data and 2,115 test data. In particular, go to the subfolder "DPWGAN-PATEGAN-MNIST/preprocessing". Run "python process_MNIST_pytorch.py". This code downloads and then splits the MNIST dataset into trainset and testset automatically.
+
 **PATE-GAN** : PATE-GAN : Generating Synthetic Data with Differential Privacy Guarantees. ICLR 2019
 
 **DP-WGAN** : Implementation of private Wasserstein GAN using noisy gradient descent moments accountant. 
@@ -36,8 +38,21 @@ df = pd.read_csv(root_path + "creditcard.csv")
 
 you can change the root_path of your own version, and make sure you put the file under the path you changed to.
 
+**DP-WGAN on MNIST dataset** : Go to the subfolder ""DPWGAN-PATEGAN-MNIST/", run the following code：
 
+···
+python evaluate.py --epoch 20 --target-variable='y' --train-data-path=./data/MNIST_CNN_train.csv --test-data-path=./data/MNIST_CNN_test.csv --normalize-data real-data --enable-privacy --sigma=1.0
+···
 
+Note that we fix the training epoch and noise size 'sigma', and then we record the resulting epsilon in DP and evaluate the classfication performance on the generated data.
+
+**DP-WGAN on MNIST dataset** : Go to the subfolder ""DPWGAN-PATEGAN-MNIST/", run the following code：
+
+···
+python evaluate.py --epoch 2000 --target-variable='y' --train-data-path=./data/MNIST_CNN_train.csv --test-data-path=./data/MNIST_CNN_test.csv --normalize-data pate-gan --enable-privacy --num-teachers 5 --lap-scale 1e-4
+···
+
+Note that we fix the training epoch and noise size 'lap-scale', and then we record the resulting epsilon in DP and evaluate the classfication performance on the generated data. You can adjust hyparameters, e.g., noise size and epoch, to satisfy your need.
 
 
 
