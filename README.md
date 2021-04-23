@@ -31,26 +31,26 @@ Notice, you need to change the "read file directory" from the first part of note
 
 For example: 
 For the following 2 lines of codes, 
-
-root_path = "/content/drive/My Drive/654/"
-
+```
+root_path = "/content/drive/My Drive/654/"  
 df = pd.read_csv(root_path + "creditcard.csv")
+```
 
 you can change the root_path of your own version, and make sure you put the file under the path you changed to.
 
 **DP-WGAN on MNIST dataset** : Go to the subfolder ""DPWGAN-PATEGAN-MNIST/", run the following code：
 
-···
+```
 python evaluate.py --epoch 20 --target-variable='y' --train-data-path=./data/MNIST_CNN_train.csv --test-data-path=./data/MNIST_CNN_test.csv --normalize-data real-data --enable-privacy --sigma=1.0
-···
+```
 
 Note that we fix the training epoch and noise size 'sigma', and then we record the resulting epsilon in DP and evaluate the classfication performance on the generated data.
 
-**DP-WGAN on MNIST dataset** : Go to the subfolder ""DPWGAN-PATEGAN-MNIST/", run the following code：
+**PATE-GAN on MNIST dataset** : Go to the subfolder ""DPWGAN-PATEGAN-MNIST/", run the following code：
 
-···
+```
 python evaluate.py --epoch 2000 --target-variable='y' --train-data-path=./data/MNIST_CNN_train.csv --test-data-path=./data/MNIST_CNN_test.csv --normalize-data pate-gan --enable-privacy --num-teachers 5 --lap-scale 1e-4
-···
+```
 
 Note that we fix the training epoch and noise size 'lap-scale', and then we record the resulting epsilon in DP and evaluate the classfication performance on the generated data. You can adjust hyparameters, e.g., noise size and epoch, to satisfy your need.
 
